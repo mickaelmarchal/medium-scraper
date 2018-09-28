@@ -13,7 +13,9 @@ function getPosts(medium) {
           var image = $(article).find('.graf-image').first().data('image-id');
           posts[index] = {
             title: $(article).find('.graf--leading').text(),
+            excerpt: $(article).find('.graf--trailing').text(),            
             time: $(article).find('time').text(),
+            timeISO: $(article).find('time').attr('datetime'),
             image: image ? `https://cdn-images-1.medium.com/max/900/${image}` : null,
             url: $(article).find('.postArticle-readMore').find('a').attr('href').split('?')[0]
           }
